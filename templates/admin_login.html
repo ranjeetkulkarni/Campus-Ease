@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/admin_login.css">
+    <title>PYQ Analyser - Admin Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script rel="javascript" src="/static/js/admin_login.js"></script>
+  </head>
+
+  <body>
+    <h1 id="portal">Campus Ease! - Admin Portal</h1>
+    <hr>
+    <button id="back_button" onclick="location.href='/'">Back</button>
+    <div class="login-page">
+          <div class="form">
+            <hr>
+            <h3>Admin Authentication</h3>
+            <hr>
+            <br>
+            <!-- login form -->
+            <form class="login-form">
+              <input type="text" placeholder="username" id="username" required/>
+              <input type="password" placeholder="password" id="password" required/>
+              <button type="button" id="submit_data"> Login </button>
+            </form>
+          </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  </body>
+</html>

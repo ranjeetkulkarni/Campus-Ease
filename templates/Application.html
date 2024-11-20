@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="/static/css/appli.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="/" class="logo-button">
+      <img src="/static/images/iiita3.jpg" alt="IIITA Logo" class="logo">
+    </a>
+    <h1>Expense Tracker</h1>
+    <div class="balance-container">
+      <h2>Your Balance</h2>
+      <h2 id="balance">₹{{ balance }}</h2>
+    </div>
+    <div class="inc-exp-container">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" class="money plus">+₹{{ income }}</p>
+      </div>
+      <div>
+        <h4>Expenses</h4>
+        <p id="money-minus" class="money minus">-₹{{ expenses }}</p>
+      </div>
+    </div>
+    <h3>History</h3>
+    <ul id="list" class="list">
+      {% for item in history %}
+        <li class="{{ 'plus' if item.amount > 0 else 'minus' }}">
+          {{ item.description }} 
+          <span>{{ '+₹' if item.amount > 0 else '-₹' }}{{ abs(item.amount) }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    <h3>Add New Transaction</h3>
+    <form id="form" action="/api/save-changes" method="POST">
+      <div>
+        <label for="text">Description</label>
+        <input type="text" id="text" name="description" placeholder="Enter description..." required>
+      </div>
+      <div>
+        <label for="amount">Amount <br>
+          <small>(-100 = expense, 100 = income)</small>
+        </label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount..." required>
+      </div>
+      <button type="submit">Add Transaction</button>
+    </form>
+    <form method="POST" action="/delete_history" onsubmit="return confirm('Are you sure you want to delete your history? This action cannot be undone.')">
+      <button type="submit" class="btn btn-danger">Delete History</button>
+    </form>
+  </div>
+</body>
+
+</html>

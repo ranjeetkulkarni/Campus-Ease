@@ -1,0 +1,72 @@
+/* Styling for the body */
+body {
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);  /* Gradient background */
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the main portal title */
+#portal {
+  font-size: 3em;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 50px;
+}
+
+/* Styling for the login blocks */
+.main_user_block {
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ccc;
+  color: #555;
+  text-align: center;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effects for login blocks */
+.main_user_block:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the login buttons */
+.login_button {
+  background-color: #4CAF50;  /* Green color */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effects for the login buttons */
+.login_button:hover {
+  background-color: #45a049;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Positioning for admin and user login blocks */
+#admin {
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+#user {
+  position: fixed;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
